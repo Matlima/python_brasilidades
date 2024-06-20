@@ -1,6 +1,8 @@
-from datetime import datetime, timedelta
-from datas_br import DatasBr
+from acesso_cep import BuscaEndereco
+import requests
 
+cep = "40450480"
+objeto_cep = BuscaEndereco(cep)
 
-hoje = DatasBr()
-print(hoje.tempo_cadastro())
+bairro, cidade, uf = objeto_cep.acessa_via_cep()
+print(bairro, cidade, uf)
